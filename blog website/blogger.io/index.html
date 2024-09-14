@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+
+    <!-- Specify character encoding -->
+    <meta charset="UTF-8">
+    <!-- Set compatibility mode for Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Define the viewport for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Set the title of the page -->
+    <title>blogger.io</title>
+    <!-- Set the icon of the page -->
+    <link rel="icon" type="image/png" href="./images/logo.png"/>
+
+    <!-- Include Font Awesome icons using a CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Include custom CSS files for the page -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/signin.css">
+</head>
+
+
+
+
+<body>
+
+<!-- This is a header section that contains the website's logo, navigation bar, and search bar -->
+<header class="header">
+
+    <!-- The website's logo -->
+    <a href="#" class="logo">blogger<span>.io</span></a>
+
+    <!-- Navigation bar that links to different sections of the website -->
+    <nav class="navbar">
+        <a href="#banner">My posts</a>
+        <a href="#posts">Explore</a>
+        <a href="#contact">Contact Us</a>
+        
+        <!-- A button that triggers a modal for signing in -->
+        <button class="btnn" data-modal-target="#modal">Sign In</button>
+        
+        <!-- A modal that appears when the Sign In button is clicked -->
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <div class="title">SIGN IN TO YOUR ACCOUNT</div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+                
+            <!-- A form inside the modal for entering email and password -->
+            <div class="modal-body">
+            <form action="#">
+              <div class="field email">
+                <div class="input-area">
+                  <input type="text" placeholder="Email Address">
+                  <i class="icon fas fa-envelope"></i>
+                  <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">Email can't be blank</div>
+              </div>
+              <div class="field password">
+                <div class="input-area">
+                  <input type="password" placeholder="Password">
+                  <i class="icon fas fa-lock"></i>
+                  <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">Password can't be blank</div>
+              </div>
+              <div class="pass-txt"><a href="#">Forgot password?</a></div>
+              <input type="submit" value="Login">
+            </form>
+            </div>
+        </div>
+        
+        <!-- A transparent overlay that appears behind the modal -->
+        <div id="overlay"></div>
+    </nav>
+
+    <!-- Icons for opening the mobile menu and search bar -->
+    <div class="icons">
+        <i class="fas fa-bars" id="menu-bars"></i>
+        <i class="fas fa-search" id="search-icon"></i>
+    </div>
+
+    <!-- A search form that appears when the search icon is clicked -->
+    <form class="search-form">
+        <input type="search" placeholder="search here..." id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+
+</header>
+
+
+
+
+
+
+
+<!-- This is a section that contains a banner with a call-to-action button for adding a blog post -->
+<section class="banner" id="banner">
+
+    <!-- The content of the banner -->
+    <div class="content">
+        <h3>Share your experiance</h3>
+        <p>Measuring the earth with our feet</p>
+        <a href="#post-popup" class="btn">Add A Post</a>
+    </div>
+
+    <!-- A popup that appears when the "Add A Post" button is clicked -->
+    <div id="post-popup" class="overlay">
+	    <div class="post-popup">
+	    	<h2>Add A Blog Post</h2>
+	    	<a class="close" href="#">&times;</a>
+	    	<div class="popup-content">
+	    		<!-- A form for entering the blog post information -->
+	    		<form class="cf">
+                  <div class="half left cf">
+                    <input type="text" id="input-name" placeholder="Name">
+                    <input type="email" id="input-email" placeholder="Email address">
+                    <input type="text" id="input-subject" placeholder="Post Title">
+                  </div>
+                  <div class="half right cf">
+                    <textarea name="message" type="text" id="input-message" placeholder="Message"></textarea>
+
+                    <!-- An input field for uploading an image -->
+                    <input type="file" accept="image/*" onchange="loadFile(event)">
+                      <p><img id="output" width="200"/></p>
+                      <script>
+                          var loadFile = function(event) {
+                              var image = document.getElementById('output');
+                              image.src=URL.createObjectURL(event.target.files[0]);
+                          };
+                      </script>
+                  </div>  
+                  <input type="submit" value="Submit" id="input-submit">
+                </form>
+	    	</div>
+	    </div>
+    </div>
+
+</section>
+
+
+<!-- posts section starts  -->
+
+<section class="container" id="posts">
+
+<!-- Main container for blog posts -->
+<div class="posts-container">
+
+    <!-- First blog post -->
+    <div class="post">
+        <!-- Blog post image -->
+        <img src="images/tulip-post.jpeg" alt="" class="image">
+        <!-- Blog post date -->
+        <div class="date">
+            <i class="far fa-clock"></i>
+            <span>1st may, 2021</span>
+        </div>
+        <!-- Blog post title -->
+        <h3 class="title">Sunset</h3>
+        <!-- Blog post content -->
+        <p class="text">Good evening, Today we went to the Tulip garden. and Watched the sun set. it was a beautiful scenery. <br>
+            <!-- Blog post hashtags -->
+            <a href="#">#NaturePhotography</a><a href="#">#NatureBeauty</a><br>
+            🌷🌷♥️🧡</p>
+        <!-- Blog post metadata (author, likes, comments, shares) -->
+        <div class="links">
+            <a href="#" class="user">
+                <i class="far fa-user"></i>
+                <span>by Roashan Signh</span>
+            </a>
+            <a href="#" class="icon">
+                <i class="fa fa-thumbs-up"></i>
+                <span>(29)</span>
+            </a>
+            <a href="#" class="icon">
+                <i class="far fa-comment"></i>
+                <span>(45)</span>
+            </a>
+            <a href="#" class="icon">
+                <i class="far fa-share-square"></i>
+                <span>(29)</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Second blog post -->
+    <div class="post">
+        <!-- Blog post image -->
+        <img src="images/hawaii.jpeg" alt="" class="image">
+        <!-- Blog post date -->
+        <div class="date">
+            <i class="far fa-clock"></i>
+            <span>7th July, 2022</span>
+        </div>
+        <!-- Blog post title -->
+        <h3 class="title">Swim With Dolphins</h3>
+        <!-- Blog post content -->
+        <p class="text">Captain Lena and her crew were so informative, kind and a hard working crew. 
+            They kept us and the Manta Ray’s safe. I have been on many snorkeling boats but nothing gets 
+            close to this. A 10 to 16 foot monster doing back flips just under you where you think they 
+            are going to touch you is amazing. Everyone should do this snorkel if you can.</p>
+        <!-- Blog post metadata (author, comments, shares) -->
+        <div class="links">
+            <a href="#" class="user">
+                <i class="far fa-user"></i>
+                <span>By Hawaii Dolphin</span>
+            </a>
+            <a href="#" class="icon">
+                <i class="far fa-comment"></i>
+                <span>(45)</span>
+            </a>
+                        <a href="#" class="icon">
+                <i class="far fa-share-square"></i>
+                <span>(29)</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Third blog post -->
+    <div class="post">
+        <!-- Blog post image -->
+        <img src="images/lioni.jpeg" alt="" class="image">
+        <!-- Blog post date -->
+        <div class="date">
+            <i class="far fa-clock"></i>
+            <span>1st February, 2023</span>
+        </div>
+        <!-- Blog post title -->
+        <h3 class="title">Lion in the Cart</h3>
+        <!-- Blog post content -->
+        <p class="text">I cannot believe “if it fits, i sits” transcends boundaries in this way
+            <br><a href="#">@AMAZlNGNATURE</a>
+            <br> Animals 🐿️ 
+            <br> Nature 🦋 
+            <br> Discovery 🦖                            
+        </p>
+        <!-- Blog post metadata (author, comments, shares) -->
+        <div class="links">
+            <a href="#" class="user">
+                <i class="far fa-user"></i>
+                <span>Nature is Amazing ☘️</span>
+            </a>
+            <a href="#" class="icon">
+                <i class="far fa-comment"></i>
+                <span>(45)</span>
+            </a>
+            <a href="#" class="icon">
+                <i class="far fa-share-square"></i>
+                <span>(29)</span>
+            </a>
+        </div>
+    </div>
+
+</div>
+<!-- End of the main container for blog posts -->
+
+
+
+    <!-- Start of the sidebar -->
+<div class="sidebar">
+
+    <!-- Start of the profile box -->
+    <div class="box">
+        <h3 class="title">Your Profile</h3>
+        <div class="about">
+            <img src="images/user.png" alt="">
+            <h3>Hooda AbdulShakoor</h3>
+            <p>Student at Middlesex University Dubai. Bachlor of Science, Information Technology, Year 2. </p>
+            <!-- Social media follow buttons -->
+            <div class="follow">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+    </div>
+    <!-- End of the profile box -->
+
+    <!-- Start of the categories box -->
+    <div class="box">
+        <h3 class="title">categories</h3>
+        <div class="category">
+            <!-- Category links with post counts -->
+            <a href="#"> travel <span>42</span></a>
+            <a href="#"> photography <span>75</span> </a>
+            <a href="#"> study <span>48</span> </a>
+            <a href="#"> music <span>59</span> </a>
+            <a href="#"> public <span>12</span> </a>
+            <a href="#"> sports <span>18</span> </a>
+        </div>
+    </div>
+    <!-- End of the categories box -->
+
+    <!-- Start of the popular posts box -->
+    <div class="box">
+        <h3 class="title">popular posts</h3>
+        <div class="p-post">
+            <!-- Popular post links with titles and dates -->
+            <a href="#">
+                <h3>01. Amazing NAture</h3>
+                <span><i class="far fa-clock"></i>1st may, 2021</span>
+            </a>
+            <a href="#">
+                <h3>02. Lion in the Cart</h3>
+                <span><i class="far fa-clock"></i>1st may, 2021</span>
+            </a>
+            <a href="#">
+                <h3>03. Tulip Sunsets</h3>
+                <span><i class="far fa-clock"></i>1st may, 2021</span>
+            </a>
+            <a href="#">
+                <h3>04. The Glow Gardens</h3>
+                <span><i class="far fa-clock"></i>1st may, 2021</span>
+            </a>
+        </div>
+    </div>
+    <!-- End of the popular posts box -->
+
+    <!-- Start of the popular tags box -->
+    <div class="box">
+        <h3 class="title">popular tags</h3>
+        <div class="tags">
+            <!-- Popular tag links -->
+            <a href="#">Travel</a>
+            <a href="#">Photo</a>
+            <a href="#">Aliens</a>
+            <a href="#">Nature</a>
+            <a href="#">Mountain</a>
+            <a href="#">Landscape</a>
+        </div>
+    </div>
+    <!-- End of the popular tags box -->
+
+</div>
+<!-- End of the sidebar -->
+</section>
+<!-- posts section ends -->
+
+
+
+
+
+<!-- contact section starts  -->
+
+<section class="contact" id="contact">
+
+    <form action="">
+        <h3>Contact Us</h3>
+        <div class="inputBox">
+            <input type="text" placeholder="Full Name">
+            <input type="email" placeholder="Email Address">
+        </div>
+        <div class="inputBox">
+            <input type="number" placeholder="Mobile Number">
+            <input type="text" placeholder="Subject">
+        </div>
+        <textarea name="" placeholder="Please share your experiance on this site." id="" cols="30" rows="10"></textarea>
+        <input type="submit" value="Send" class="btn">
+    </form>
+
+</section>
+
+<!-- contact section ends -->
+
+
+
+<!-- footer section starts -->
+<section class="footer">
+    <!-- social media icons container -->
+    <div class="follow">
+        <!-- Facebook icon with link -->
+        <a href="#" class="fab fa-facebook-f"></a>
+        <!-- Twitter icon with link -->
+        <a href="#" class="fab fa-twitter"></a>
+        <!-- Instagram icon with link -->
+        <a href="#" class="fab fa-instagram"></a>
+        <!-- LinkedIn icon with link -->
+        <a href="#" class="fab fa-linkedin"></a>
+    </div>
+
+    <!-- copyright information -->
+    <div class="credit">Hooda AbdulShakoor | M00849592<span>  All rights reserved</span></div>
+</section>
+<!-- footer section ends -->
+
+<!-- custom JavaScript file links -->
+<!-- main script file -->
+<script src="js/script.js"></script>
+<!-- popup script file -->
+<script src="js/popup.js"></script>
+<!-- sign script file -->
+<script src="js/signin.js"></script>
+<script src="js/signin-bn.js"></script>
+
+<!-- <script src="path/to/modal.js"></script> -->
+
+<!-- closing body tag -->
+</body>
+<!-- closing html tag -->
+</html>

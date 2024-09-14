@@ -1,0 +1,90 @@
+/* Apply a box-sizing of border-box to all elements, their before and after pseudo-elements */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+/* Styling for the button */
+.btnn {
+    color: var(--dark);
+    margin-right: 2rem;
+    font-size: 1.7rem;
+    font-weight: bolder;
+    text-transform: capitalize;
+    background-color: Transparent;
+}
+
+/* Button hover effect */
+.btnn :hover {
+    color: var(--orange);
+}
+
+/* Modal container styling */
+.modal {
+    position: fixed;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+}
+
+/* Modal active state */
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Modal header styling */
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+/* Modal header title styling */
+.modal-header .title {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* Close button styling in the modal header */
+.modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Modal body styling */
+.modal-body {
+    padding: 10px 15px;
+}
+
+/* Overlay styling */
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+
+/* Active overlay state */
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
